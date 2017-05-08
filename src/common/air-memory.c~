@@ -1,0 +1,15 @@
+#include "air-memory.h"
+
+BYTE *AirMemory::Allocate(int size)
+{
+    return new(size);
+}
+
+void Delllcate(BYTE **ptr)
+{
+    delete ptr;
+    *ptr = nullptr;
+}
+
+
+
