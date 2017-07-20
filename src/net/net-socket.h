@@ -1,0 +1,39 @@
+#ifndef NET-SOCKET-H
+#define NET-SOCKET-H
+
+#include "net.h"
+
+#include <string>
+using namespace std;
+
+#define NET_SOCKET_YTPE_IS_UDP(x) (x & NET_TYPE_UDP)
+#define NET_SOCKET_YTPE_IS_TCP(x) (x & NET_TYPE_TCP)
+#define NET_SOCKET_YTPE_IS_IPV4(x) (x & NET_TYPE_IPV4)
+#define NET_SOCKET_YTPE_IS_IPV6(x) (x & NET_TYPE_IPV6)
+#define NET_SOCKET_TYPE_IS_UDP_IPV4(x)  (NET_SOCKET_YTPE_IS_UDP(x) & NET_SOCKET_YTPE_IS_IPV4(x))
+#define NET_SOCKET_TYPE_IS_UDP_IPV6(x)  (NET_SOCKET_YTPE_IS_UDP(x) & NET_SOCKET_YTPE_IS_IPV6(x))
+#define NET_SOCKET_TYPE_IS_TCP_IPV4(x)  (NET_SOCKET_YTPE_IS_TCP(x) & NET_SOCKET_YTPE_IS_IPV4(x))
+#define NET_SOCKET_TYPE_IS_TCP_IPV6(x)  (NET_SOCKET_YTPE_IS_TCP(x) & NET_SOCKET_YTPE_IS_IPV6(x))
+
+class NetSocket
+{
+private:
+    string m_host;
+    uint16_t port;
+    NET_TYPE m_type;
+    int m_sockfd;
+
+private:
+
+
+public:
+    NetSocket(const char* host, uint16_t port, NET_TYPE type);
+    ~NetSocket();
+
+public:
+    NetSocket create(bool non_block, bool binding);
+
+};
+
+#endif
+

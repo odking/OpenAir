@@ -1,0 +1,17 @@
+#ifndef NET_UTILS_H
+#define NET_UTILS_H
+
+
+class NetUtils
+{
+public:
+    static NetUtils * GetInstance();
+
+private:
+    NetUtils();
+
+private:
+    static NetUtils *m_instance;
+};
+
+#endif

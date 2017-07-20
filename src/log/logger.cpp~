@@ -3,5 +3,5 @@
 
 void logger(char *str)
 {
-    printf("logger\r\n");
+    printf("logger");
 }

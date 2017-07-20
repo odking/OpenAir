@@ -1,0 +1,20 @@
+## makefile templace for modules
+
+-include $(TOPDIR)/Makefile.env
+
+INCLUDES = $(INCDIR)/MODULE_NAME
+
+$(SLIB): $(OBJS)
+	$(AR) $@ $^ 
+
+$(OBJS): %.o: %.cpp
+	$(CC) -I$(INCLUDES) -I$(INCDIR) -MM $<
+	$(CC) $(CFLAGS) -I$(INCLUDES) -I$(INCDIR) -c $< -o $@
+
+.PHONY: clean
+clean:
+	-$(RM) $(OBJS)
+	-$(RM) $(TARGET)
+
+
+

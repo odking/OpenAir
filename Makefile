@@ -18,6 +18,6 @@ all:
 
 .PHONE: clean
 clean:
-	cd $(SRCROOT); $(MAKE) clean
+	cd $(SRCDIR); $(MAKE) clean
 	-$(RM) $(OUTDIR)/*
 

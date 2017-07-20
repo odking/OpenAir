@@ -3,7 +3,7 @@
 
 void my_test()
 {
-    logger("my_test");
+    logger("my_test\r\n");
 }
 
 int main(int argc, char ** argv)
