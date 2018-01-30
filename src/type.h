@@ -3,4 +3,10 @@
 
 #define BYTE char
 
+type enum
+{
+    RC_OK           = 0,
+    RC_FAILED       = -1
+}Ret;
+
 #endif
